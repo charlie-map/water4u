@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <h1>hi there!</h1>
+    <div id="posn">
+      <p>Welcome to drink4u, a web page which reminds you to drink water.</p>
+      <button id="hydrate">hydrate</button>
+      <button id="dehydrate">drop out</button>
+      <button id="back">back</button>
+      <button id="back2">back</button>
+    </div>
+    <div id="signup">
+      <form action="/signup-user" method="post">
+        <input type="text" id="name" name="name" placeholder="John Doe">
+        <input type="tel" id="phone" name="phone" placeholder="202-111-4078" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <select id="per_day" name="per_day">
+          <option value="0">every hour</option>
+          <option value="1">every two hours</option>
+          <option value="2">every three hours</option>
+          <option value="3">every four hours</option>
+        </select>
+        <input id="realbutt" type="submit" value="submit">
+      </form>
+    </div>
+    <div id="dropout">
+      <form action="/drop-user" method="post">
+        <input type="tel" id="phone2" name="phone" placeholder="202-111-4078" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <input id="realbutt2" type="submit" value="submit">
+      </form>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

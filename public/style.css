@@ -1,0 +1,147 @@
+/* CSS files add styling rules to your content */
+
+body {
+  background-image: url("https://media0.giphy.com/media/l2YSowMXk0Qu0DFm0/giphy.gif?cid=ecf05e47hljl36oc6w07o55a0own1vzgnam26csjo806i403&rid=giphy.gif");
+  background-size: 100%;
+  font-style: monospace;
+  color: #145ac9;
+}
+
+.square {
+  position: fixed;
+  height: 700px;
+  width: 1365px;
+  background-color: white;
+  opacity: 0.45;
+  transform: matrix(1, 0, 0, 1, 30, 30);
+}
+
+h1 {
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  font-size: 10vw;
+  left: 32%;
+}
+
+h3 {
+  position: fixed;
+  font-size: 25px;
+  transform: matrix(1.2, 0, 0, 1.2, 160, -20);
+}
+
+#posn {
+  position: absolute;
+  font-size: 3vw;
+  top: 10vw;
+  left: 9%;
+  text-align: center;
+}
+
+p {
+  position: relative;
+  font-size: 3vw;
+  color: #abc0e0;
+  text-align: center;
+}
+
+#name {
+  position: absolute;
+  font-size: 2vw;
+  left: 35.5vw;
+  top: 18vw;
+  text-align: center;
+}
+
+#phone {
+  position: absolute;
+  font-size: 2vw;
+  left: 35.5vw;
+  top: 22vw;
+  text-align: center;
+}
+
+#phone2 {
+  position: absolute;
+  font-size: 2vw;
+  left: 35.5vw;
+  top: 18vw;
+  text-align: center;
+}
+
+#per_day {
+  position: absolute;
+  font-size: 2vw;
+  color: #21ebc2;
+  left: 40vw;
+  top: 25vw;
+  text-align-last: center; 
+}
+
+#realbutt, #realbutt2, button {
+  border-width: 0px;
+  font-family: serif;
+  font-style: bold;
+  position: fixed;
+  left: 36%;
+  width: 25%;
+  height: 8%;
+  background-color: white;
+  text-align: center;
+  opacity: 0.3;
+  transition: 0.75s;
+}
+
+#hydrate {
+  top: 35%;
+}
+
+#dehydrate {
+  top: 45%;
+}
+
+#back {
+  top: 75%;
+}
+
+#realbutt {
+  top: 65%;
+}
+
+#realbutt2 {
+  top: 45%;
+}
+
+#back2 {
+  top: 55%;
+}
+
+#realbutt:hover {
+  background-color: #21ebc2;
+  opcaity: 0.75;
+}
+
+#realbutt2:hover{
+  background-color: #21ebc2;
+  opcaity: 0.75;
+}
+
+#hydrate:hover {
+  background-color: #21ebc2;
+  opacity: 0.75;
+}
+
+#back:hover {
+  background-color: #e660c4;
+  opacity: 0.45;
+}
+
+#back2:hover {
+  background-color: #e660c4;
+  opacity: 0.45;
+}
+
+#dehydrate:hover {
+  background-color: #e660c4;
+  opacity: 0.45;
+}
