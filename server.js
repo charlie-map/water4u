@@ -7,7 +7,6 @@ const bodyParse = require('body-parser');
 const app = express();
 
 //console.log(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_ACCOUNT_TOKEN);
-const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_ACCOUNT_TOKEN);
 
 const connection = mysql.createConnection({
 	host: process.env.HOST,
@@ -26,11 +25,17 @@ app.use(bodyParse.urlencoded({
 	extended: true
 }));
 
-// client.messages.create({
-// 	from: process.env.TWILIO_PHONE_NUMBER,
-// 	to: "+14344227778",
-// 	body: "Test"
-// }).then((message) => console.log(message));
+const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_ACCOUNT_TOKEN);
+
+function sendMail(number, message) {
+	client.messages.create({
+		from: process.env.TWILIO_PHONE_NUMBER,
+		to: number,
+		body: message
+	}).then((message) => {
+		return message
+	});
+}
 
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/views/index.html");
@@ -62,3 +67,7 @@ app.post("/drop-user", (req, res) => {
 app.listen(3000, () => {
 	console.log("server go vroom");
 });
+
+module.exports = {
+	sendMail
+};
