@@ -22,8 +22,12 @@ function sending() {
 	return new Promise((resolve, reject) => {
 		connection.query("SELECT * FROM water_client WHERE subscribed=1", (err, clients) => {
 			if (err) throw err;
+			let hours = new Date().getHours();
 			clients.forEach((item, index) => {
-				sendMail("+1" + item.number, "Hey " + item.name + ", don't forget to drink water!");
+				// use consist to know if we should send the text at this time
+				if (hours % item.consist == 0) {
+					sendMail("+1" + item.number, "Hey " + item.name + ", don't forget to drink water!");
+				}
 			});
 			resolve();
 		});
