@@ -25,18 +25,6 @@ app.use(bodyParse.urlencoded({
 	extended: true
 }));
 
-const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_ACCOUNT_TOKEN);
-
-function sendMail(number, message) {
-	client.messages.create({
-		from: process.env.TWILIO_PHONE_NUMBER,
-		to: number,
-		body: message
-	}).then((message) => {
-		return message
-	});
-}
-
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/views/index.html");
 });
@@ -67,7 +55,3 @@ app.post("/drop-user", (req, res) => {
 app.listen(3000, () => {
 	console.log("server go vroom");
 });
-
-module.exports = {
-	sendMail
-};
