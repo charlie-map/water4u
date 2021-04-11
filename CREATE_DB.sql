@@ -13,5 +13,5 @@ CREATE TABLE water_client (
 );
 
 CREATE USER 'your_user_here'@'localhost' IDENTIFIED BY 'your_password_here';
-GRANT SELECT, UPDATE, DELETE ON 'water_db'.'water_client' TO 'your_user_here'@'localhost';
+GRANT SELECT, UPDATE, DELETE ON water_db.water_client TO 'your_user_here'@'localhost';
 FLUSH PRIVILEGES;
