@@ -20,7 +20,7 @@ connection.connect((err) => {
 	if (err) throw err;
 });
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParse.urlencoded({
 	extended: true
 }));
