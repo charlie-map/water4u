@@ -1,0 +1,5 @@
+##!/bin/bash
+#Used to send requests to IsDatabaseConnected on registration, which will then $
+
+node sendtext.js
+exit 0

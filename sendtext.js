@@ -31,11 +31,11 @@ function sending() {
 	return new Promise((resolve, reject) => {
 		connection.query("SELECT * FROM water_client WHERE subscribed=1", (err, clients) => {
 			if (err) throw err;
-			let hours = new Date().getHours();
+			let hours = parseInt(new Date().getHours(), 10) - 3;
 			clients.forEach((item, index) => {
 				// use consist to know if we should send the text at this time
 				if (hours % item.consist == 0 && hours >= 7 && hours <= 22) {
-					sendMail("+1" + item.number, "Hey " + item.name + ", don't forget to drink water!");
+					sendMail("+1" + item.numbers, "Hey " + item.name + ", don't forget to drink water!");
 				}
 			});
 			resolve();

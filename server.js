@@ -36,7 +36,7 @@ app.post("/signup-user", (req, res) => {
 	let number = req.body.phone.replace(/[^0-9]/g, "");
 	if (number.length < 10) return res.end("Not enough digits");
 	if (number.length > 10) return res.end("Too many digits");
-	connection.query("INSERT INTO water_client (name, number, subscribed, consist) VALUES (?, ?, ?, ?)", [req.body.name, number, 1, parseInt(req.body.per_day, 10) + 1], (err) => {
+	connection.query("INSERT INTO water_client (name, numbers, subscribed, consist) VALUES (?, ?, ?, ?)", [req.body.name, number, 1, parseInt(req.body.per_day, 10) + 1], (err) => {
 		if (err) console.log(err);
 		res.redirect("/");
 	});
@@ -46,7 +46,7 @@ app.post("/drop-user", (req, res) => {
 	let number = req.body.phone.replace(/[^0-9]/g, "");
 	if (number.length < 10) return res.end("Not enough digits");
 	if (number.length > 10) return res.end("Too many digits");
-	connection.query("DELETE FROM water_client WHERE number=?", number, (err) => {
+	connection.query("DELETE FROM water_client WHERE numbers=?", number, (err) => {
 		if (err) console.error(err);
 		res.redirect("/");
 	});
