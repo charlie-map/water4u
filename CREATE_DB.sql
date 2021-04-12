@@ -5,6 +5,7 @@ USE water_db;
 CREATE TABLE water_client (
 	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255) NOT NULL,
+	country_code VARCHAR(255) NOT NULL,
 	numbers VARCHAR(255) NOT NULL,
 	subscribed TINYINT NOT NULL,
 	consist INT NOT NULL,
