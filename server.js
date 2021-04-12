@@ -34,14 +34,14 @@ app.post("/signup-user", (req, res) => {
 	//fix the phone number
 	let answers = [];
 	let number = req.body.phone.replace(/[^0-9]/g, "");
-	let code = req.body.country_code.replace(/[^0-9]/g, "");
+	
 	if (number.length < 10) return res.end("Not enough digits");
 	if (number.length > 10) return res.end("Too many digits");
-	connection.query("INSERT INTO water_client (name, country_code, number, subscribed, consist) VALUES (?, ?, ?, ?, ?)", 
-		[req.body.name, code, number, 1, parseInt(req.body.per_day, 10) + 1], (err) => {
-		if (err) console.log(err);
-		res.redirect("/");
-	});
+	// connection.query("INSERT INTO water_client (name, country_code, number, subscribed, consist) VALUES (?, ?, ?, ?, ?)", 
+	// 	[req.body.name, code, number, 1, parseInt(req.body.per_day, 10) + 1], (err) => {
+	// 	if (err) console.log(err);
+	// 	res.redirect("/");
+	// });
 });
 
 app.post("/drop-user", (req, res) => {

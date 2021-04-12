@@ -53,11 +53,17 @@ p {
   text-align: center;
 }
 
+.iti {
+  z-index: 2;
+  left: 32.5vw;
+  top: 22vw;
+}
+
 #phone {
   position: absolute;
   font-size: 2vw;
-  left: 35.5vw;
-  top: 22vw;
+  left: 0vw;
+  top: -1.2vw;
   text-align: center;
 }
 
@@ -101,11 +107,11 @@ p {
 }
 
 #back {
-  top: 75%;
+  top: 50%;
 }
 
 #realbutt {
-  top: 65%;
+  top: 40%;
 }
 
 #realbutt2 {
